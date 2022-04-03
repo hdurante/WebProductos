@@ -1,1 +1,25 @@
-<p>productos works!</p>
+<table class="table table-striped">
+    <thead>
+        <tr>            
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>SKU</th>
+            <th>Marca</th>
+            <th>Costo</th>
+            <th>Porcentaje Utilidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of Productos">
+            <td>{{producto._id}}</td>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.sku}}</td>
+            <td>{{producto.marca}}</td>
+            <td>{{producto.costo}}</td>
+            <td>{{producto.porcentajeUtilidad}}</td>
+            <td>
+                <button type="=button" class="btn btn-primary">Detalle</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
