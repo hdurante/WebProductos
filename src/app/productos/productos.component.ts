@@ -23,11 +23,4 @@ export class ProductosComponent implements OnInit {
     });
   }
 
-  detalleProductos(){
-    this.service.obtenerProductos().subscribe(data=>{
-      console.log(data);
-      this.Productos=data;
-    });
-  }
-
 }

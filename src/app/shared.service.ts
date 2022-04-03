@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-  readonly urlApiProductos = "http://172.20.182.89:3000"
+  readonly urlApiProductos = "http://172.21.221.126:3000"
   
   constructor(private http:HttpClient) { }
 

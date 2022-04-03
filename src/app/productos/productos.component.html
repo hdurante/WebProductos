@@ -1,25 +1,34 @@
 <table class="table table-striped">
     <thead>
-        <tr>            
-            <th>Id</th>
+        <tr style="text-align: center;">                        
             <th>Nombre</th>
             <th>SKU</th>
             <th>Marca</th>
-            <th>Costo</th>
-            <th>Porcentaje Utilidad</th>
+            <th>&nbsp;</th>
+            <th>Costo</th>              
+            <th>Utilidad</th>
+            <th>&nbsp;</th>
+            <th>Precio</th>
+            <th colspan="2">Atributos</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let producto of Productos">
-            <td>{{producto._id}}</td>
-            <td>{{producto.nombre}}</td>
-            <td>{{producto.sku}}</td>
-            <td>{{producto.marca}}</td>
+        <tr style="text-align: right;" *ngFor="let producto of Productos">            
+            <td style="text-align: left;" >{{producto.nombre}}</td>
+            <td style="text-align: left;">{{producto.sku}}</td>
+            <td style="text-align: left;">{{producto.marca}}</td>
+            <td>$</td>
             <td>{{producto.costo}}</td>
-            <td>{{producto.porcentajeUtilidad}}</td>
-            <td>
-                <button type="=button" class="btn btn-primary">Detalle</button>
-            </td>
+            <td>{{producto.porcentajeUtilidad}}%</td>
+            <td> $</td>
+            <td>{{producto.costo + producto.costo * (producto.porcentajeUtilidad / 100)}}</td>                            
+            <td  [hidden]="!producto.tipoPantalla" >Tipo Pantalla : {{producto.tipoPantalla}}</td>  
+            <td  [hidden]="!producto.tamanoPantalla">Tamaño Pantalla : {{producto.tamanoPantalla}}</td>
+            <td  [hidden]="!producto.material">Material : {{producto.material}}</td>  
+            <td  [hidden]="!producto.numero">Numero/Tamaño : {{producto.numero}}</td>
+            <td  [hidden]="!producto.procesador">Procesador : {{producto.procesador}}</td> 
+            <td  [hidden]="!producto.memoriaRam">Memoria RAM :{{producto.memoriaRam}}</td>
+            
         </tr>
     </tbody>
 </table>

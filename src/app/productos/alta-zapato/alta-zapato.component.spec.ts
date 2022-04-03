@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ProductoAltaComponent } from './producto-alta.component';
+import { AltaZapatoComponent } from './alta-zapato.component';
 
-describe('ProductoAltaComponent', () => {
-  let component: ProductoAltaComponent;
-  let fixture: ComponentFixture<ProductoAltaComponent>;
+describe('AltaZapatoComponent', () => {
+  let component: AltaZapatoComponent;
+  let fixture: ComponentFixture<AltaZapatoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProductoAltaComponent ]
+      declarations: [ AltaZapatoComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ProductoAltaComponent);
+    fixture = TestBed.createComponent(AltaZapatoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
