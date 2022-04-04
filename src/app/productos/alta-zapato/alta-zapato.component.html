@@ -1,1 +1,32 @@
-<p>alta-zapato works!</p>
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header p-3 mb-2 bg-warning text-white">
+            <b>Agregar modelo de zapato</b>
+        </div>
+        <form [formGroup]="formProducto" (submit)="send()">
+        <div class="card-body p-4">
+            <label style="float:left m-2">Nombre</label>
+            <input class="form-control m-2" type="text" id="nombre" formControlName="nombre" placeholder="Nombre" >
+            <label style="float:left m-2">SKU</label>
+            <input class="form-control m-2" type="text" formControlName="sku"  placeholder="SKU" >
+            <label style="float:left m-2">Marca</label>
+            <input class="form-control m-2" type="text" formControlName="marca"  placeholder="Marca" >        
+            <label style="float:left m-2">Costo</label>
+            <input class="form-control m-2" type="number" formControlName="costo"  placeholder="Costo" >
+            <label style="float:left m-2">Material</label>
+            <select class="form-select m-2" formControlName="material" >                
+                <option selected value="Piel">Piel</option>
+                <option value="Plástico">Plástico</option>                
+            </select>
+            <label style="float:left m-2">Numero / Tamaño</label>
+             <input class="form-control m-2" type="text" formControlName="numero"  placeholder="Numero" >              
+            <div>
+                <br>
+                <label class="text-danger" style="float:left m-2" [hidden]="formProducto.valid">* Todos los campos son obligatorios favor de completarlos</label>
+                <br>
+                <button class="btn btn-primary btn-block m-2" [disabled]="formProducto.invalid" >Guardar</button>                            
+            </div>
+        </div>
+        </form>
+    </div>
+  </div> 

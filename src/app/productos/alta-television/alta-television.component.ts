@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { SharedService } from 'src/app/shared.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-alta-television',
@@ -11,7 +13,7 @@ export class AltaTelevisionComponent implements OnInit {
 
   public formProducto : FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private service:SharedService) {
+  constructor(private formBuilder:FormBuilder, private service:SharedService, private router: Router) {
     this.formProducto = this.formBuilder.group( {
      });
    }
@@ -22,7 +24,7 @@ export class AltaTelevisionComponent implements OnInit {
       sku:['',[Validators.required,Validators.minLength(3),Validators.maxLength(64)]],
       marca:['',[Validators.required,Validators.minLength(3),Validators.maxLength(64)]],      
       costo:['',[Validators.required,Validators.minLength(1),Validators.pattern('\\-?\\d*\\.?\\d{1,2}')]],
-      tipoPantalla:['LED'],
+      tipoPantalla:['Piel'],
       tamanoPantalla:['',[Validators.required,Validators.minLength(1)]],	
      });
   }
@@ -30,7 +32,8 @@ export class AltaTelevisionComponent implements OnInit {
   send():any{
     console.log(this.formProducto.value);
     this.service.guardarProducto(this.formProducto.value).subscribe(data=>{
-      console.log('Se guardo el producto');
+      console.log('Se guardo la televisión');
+      this.router.navigateByUrl('/productos');
     });
 
   }
