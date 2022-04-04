@@ -24,7 +24,7 @@ export class AltaTelevisionComponent implements OnInit {
       sku:['',[Validators.required,Validators.minLength(3),Validators.maxLength(64)]],
       marca:['',[Validators.required,Validators.minLength(3),Validators.maxLength(64)]],      
       costo:['',[Validators.required,Validators.minLength(1),Validators.pattern('\\-?\\d*\\.?\\d{1,2}')]],
-      tipoPantalla:['Piel'],
+      tipoPantalla:['LED'],
       tamanoPantalla:['',[Validators.required,Validators.minLength(1)]],	
      });
   }
